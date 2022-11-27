@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html'],
+  content: [' ./*.html', './pages/*.html'],
   theme: {
     screens: {
       sm: '480px',
       md: '768px',
       lg: '976px',
       xl: '1440px',
+      xxl: '1560px',
+      xxxl: "1882px",
+      xxxxl:"1900px"
     },
     extend: {
       backgroundColor: {
@@ -20,7 +23,7 @@ module.exports = {
         'unactiveTab': "#D3DAE1"
       },
       backgroundImage: {
-        'primary-gradient': 'linear-gradient(90deg, #005EB8 15.01%, #2093B3 51%, #40C1AC 80%)',
+        'primary-gradient': 'linear-gradient(53.03deg, #005EB8 15.44%, #2093B3 52.5%, #40C1AC 82.35%)',
         'secondry-gradient': 'linear-gradient(71.42deg, #8FA0B4 -4.57%, #002554 106.92%)',
         'user-pattern': "url('../images/updatesBAckground.svg')",
         'support' : "url('../images/customerSupport.svg')",
@@ -35,9 +38,16 @@ module.exports = {
         'crm-hover' : "url('../images/crm_hover.svg')",
         'documents' : "url('../images/Documents.svg')",
         'documents-hover' : "url('../images/Documents_hover.svg')",
+        'adaa' : "url('../images/adaa.svg')",
+        'adaa-hover' : "url('../images/adaa_hover.svg')",
+        'join' : "url('../images/join.svg')",
+        'join-hover' : "url('../images/join_hover.svg')",
+        'visitor' : "url('../images/visitor.svg')",
+        'visitor-hover' : "url('../images/visitor_hover.svg')",
         'slider1': "url('../images/slider1.svg')",
         'slider2': "url('../images/slider2.svg')",
         'slider3': "url('../images/slider3.svg')",
+        'downArrow': "url('../images/downArrow.svg')" 
       },
       colors: {
         "primary-text": "#002554",
@@ -46,11 +56,68 @@ module.exports = {
         'status-green': "#40C1AC",
         'status-gray': "#8FA0B4",
     },
-    fontSize:{
+      fontSize:{
       'xll': "10px"
     },
-    width: {
-      "10/10": "10%"
+      width: {
+      "10/10": "10%",
+      "5%": "5%",
+      "7%": "7%",
+      "12%": "12%",
+      "15%": "15%",
+      "30%": "30%",
+      "31%": "31%",
+      "34%": "34%",
+      "35%": "35%",
+      "37%": "37%",
+      "40%": "40%",
+      "42%": "42%",
+      "43%": "43%",
+      "47%": "47%",
+      "50%": "50%",
+      "52%": "52%",
+      "55%": "55%",
+      "60%": "60%",
+      "62%": "62%",
+      "65%": "65%",
+      "67%": "67%",
+      "70%": "70%",
+      "75%": "75%",
+      "80%": "80%",
+      "85%": "85%",
+      "90%": "90%",
+      "106%": "106%",
+      "196%": "196%",
+      "136": "136px",
+      "240": "240px",
+      "428": "428px",
+      "634": "634px",
+      "941": "914px",
+      "max-width-screen": "1280px",
+      "available": "-webkit-fill-available"
+    },
+      height: {
+      "100": "100px",
+      "121": "121px",
+      "580": "580px",
+      "610": "610px",
+      "85%": "85%",
+    },
+    gap:{
+      "0.1": "10px",
+      "120px": "120px",
+      "7.2": "2.75rem"
+    },
+    padding: {
+      "90px": "90px",
+      "26": "106px",
+      "1.2rem": "1.2rem"
+    },
+    margin: {
+      "min-2":"-2px", 
+      "min-7":"-7px",
+      "5.5": "5.5rem",
+      "7/2": "7.2rem"
     }
     },
   },

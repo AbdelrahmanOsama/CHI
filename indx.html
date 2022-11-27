@@ -9,157 +9,206 @@
     <link rel="stylesheet" href="./index.css">
     <link href="https://fonts.cdnfonts.com/css/neo-sans-arabic" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    
     <title>مجلس الضمان الصحي</title>
 </head>
 
-<body class="bg-main" dir="rtl">
-    <div class="flex flex-row">
-        <!-- Left Side -->
+<body class="overflow-x-hidden " dir="rtl">
+    <section class="bg-main overflow-hidden rtl:text-align ltr:text-align">
         <!-- Navbar -->
-        <nav class="navbar fixed">
+        <nav id="navbar" class="fixed navbar lg:flex flex-col overflow-y-auto overflow-x-hidden sm:hidden z-50 right-0" aria-label="navbar" onclick="navabrOpen()">
             <!-- Logo -->
             <img src="./images/Logo.svg" alt="logo">
             <!-- Menu Items -->
 
-            <div class="flex flex-col gap-6">
-                <a class="cursor-pointer" href="home">
+            <div id="navLinks" class="flex flex-col pt-10 gap-6 centeralize">
+                <a class="cursor-pointer flex" href="home">
                     <img src="./images/Home.svg" alt="home">
+                    <span class="text-white font-normal mr-3 hide">الصفحة الرئيسية</span>
                 </a>
-                <a class="cursor-pointer" href="network">
+                <a class="cursor-pointer flex" href="network">
                     <img src="./images/Network.svg" alt="netwrok">
+                    <span class="text-white font-normal mr-3 hide"> الادارات </span>
                 </a>
-                <a class="cursor-pointer" href="users">
+                <a class="cursor-pointer flex" href="users">
                     <img src="./images/Users.svg" alt="user">
+                    <span class="text-white font-normal mr-3 hide"> دليل الموظفين  </span>
                 </a>
-                <a class="cursor-pointer" href="attention">
-                    <img src="./images/Attentions.svg" alt="attntion">
+                <a class="cursor-pointer flex" href="attention">
+                    <img src="./images/latestIcon.svg" alt="attntion">
+                    <span class="text-white font-normal mr-3 hide">اخر المستجدات </span>
                 </a>
-                <a class="cursor-pointer" href="gallery">
-                    <img src="./images/Pictures.svg" alt="gallery">
+                <a class="cursor-pointer flex" href="gallery">
+                    <img src="./images/Attentions.svg" alt="gallery">
+                    <span class="text-white font-normal mr-3 hide">عن المجلس  </span>
                 </a>
-                <a class="cursor-pointer" href="archived">
-                    <img src="./images/Archived.svg" alt="archived">
+                <a class="cursor-pointer flex" href="pages/News.html">
+                    <img src="./images/Pictures.svg" alt="archived">
+                    <span class="text-white font-normal mr-3 hide"> المركز الاعلامي</span>
+                </a>
+                <a class="cursor-pointer flex" href="archived">
+                    <img src="./images/libraryIcon.svg" alt="library">
+                    <span class="text-white font-normal mr-3 hide"> المكتبة الرقمية  </span>
                 </a>
             </div>
         </nav>
 
-        <!-- Right Side -->
-        <div class="w-full" style="margin-right: 90px;">
-            <!-- Header -->
-            <header class="h-24 bg-white">
-                <div class="flex justify-between header_position">
-                    <div class="flex flex-row" style="gap: 102px">
+        <!-- Navbar Small screen -->
+        <nav id="navbarSmall" class="fixed navbar flex flex-col overflow-y-auto overflow-x-hidden z-50 right-0 hideSmall" aria-label="navbar">
+            <span class="text-white font-normal absolute top-8 right-8 cursor-pointer" onclick="navabrClose('smallScreen')">X</span>
+            <!-- Logo -->
+            <img src="./images/Logo.svg" alt="logo">
+            <!-- Menu Items -->
 
-                        <!-- Search -->
-                        <div class="relative text-gray-600">
-                            <input type="search" name="serch" placeholder="البحث"
-                                class="bg-search h-10 px-5 pr-12 rounded-sm text-sm w-96 focus:outline-none">
-                            <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-                                <img class="h-4 w-4 fill-current" src="./images/search.svg" alt="search">
-                            </button>
-                        </div>
-                        <!-- Date & weather -->
-                        <div class="flex" style="gap: 40px">
-                            <div class="flex flex-col">
-                                <span id="currentTime" class="time"></span>
-                                <span class="time_slot">ص</span>
-                            </div>
-                            <div class="flex-col align-baseline time">
-                                <p id="currentDate" class="text-cyan-text"></span>
-                                <p class="date">12 ديسمبر 2022</p>
-                                <span class="date">17 شوال 1443</span>
-                            </div>
-                            <div class="flex">
-                                <img src="./images/cloudy_.svg" alt="cloudy">
-                                <div class="weather_block">
-                                    <span class="flex">
-                                        <img class="weatherDegree" src="./images/celsius.svg" alt="celsius">
-                                        <span class="weatherNumber">16 / 25</span>
-                                    </span>
-                                    <span class="weather"> غائم</span>
-                                </div>
-                            </div>
-                        </div>
+            <div id="navLinksSmall" class="flex flex-col pt-10 gap-6 centeralize w-full">
+                <a class="cursor-pointer flex" href="home">
+                    <img src="./images/Home.svg" alt="home">
+                    <span class="text-white font-normal mr-3 hide">الصفحة الرئيسية</span>
+                </a>
+                <a class="cursor-pointer flex" href="network">
+                    <img src="./images/Network.svg" alt="netwrok">
+                    <span class="text-white font-normal mr-3 hide"> الادارات </span>
+                </a>
+                <a class="cursor-pointer flex" href="users">
+                    <img src="./images/Users.svg" alt="user">
+                    <span class="text-white font-normal mr-3 hide"> دليل الموظفين  </span>
+                </a>
+                <a class="cursor-pointer flex" href="attention">
+                    <img src="./images/latestIcon.svg" alt="attntion">
+                    <span class="text-white font-normal mr-3 hide">اخر المستجدات </span>
+                </a>
+                <a class="cursor-pointer flex" href="gallery">
+                    <img src="./images/Attentions.svg" alt="gallery">
+                    <span class="text-white font-normal mr-3 hide">عن المجلس  </span>
+                </a>
+                <a class="cursor-pointer flex" href="archived">
+                    <img src="./images/Pictures.svg" alt="archived">
+                    <span class="text-white font-normal mr-3 hide"> المركز الاعلامي</span>
+                </a>
+                <a class="cursor-pointer flex" href="archived">
+                    <img src="./images/libraryIcon.svg" alt="library">
+                    <span class="text-white font-normal mr-3 hide"> المكتبة الرقمية  </span>
+                </a>
+            </div>
+        </nav>
+      
+        <!-- Header -->
+        <header class="w-full h-100 pr-0 lg:pr-90px bg-white">
+           <div class="flex justify-between header_position">
+               <div class="flex flex-row xl:gap-120px lg:gap-5">
+                    <div class="block lg:hidden p-4 space-y-2 ml-6 cursor-pointer" onclick="navabrOpen('small')">
+                        <span class="block w-7 h-0.5 bg-primary-dark animate-pulse"></span>
+                        <span class="block w-7 h-0.5 bg-primary-dark animate-pulse"></span>
+                        <span class="block w-7 h-0.5 bg-primary-dark animate-pulse"></span>
                     </div>
-
-                    <!-- profile drop down & Notifications -->
-                    <div class="flex flex-row-reverse">
-                        <button class="flex flex-row place-items-center pr-4" type="button"
-                            data-dropdown-toggle="dropdown">
-                            <svg class="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                            <img src="./images/profileDropDown.svg" alt="profile">
-                        </button>
-                        <span class="w-0 h-6 place-self-center border"></span>
-                        <button class="flex flex-row place-items-center pl-4" type="button"
-                            data-dropdown-toggle="dropdown">
-                            <img src="./images/notifications.svg" alt="notifications">
-                        </button>
-                        <span class="notification text-white relative rounded-full">8</span>
-                    </div>
-                </div>
-
-            </header>
-
-            <!-- content -->
-            <div class="flex flex-row">
-                <!-- right side sections -->
-                <div class="flex flex-col w-10/12">
-                    <!-- updates -->
-                    <section class="updates bg-user-pattern">
-                        <!-- Full-width images with number and caption text -->
-                        <div>
-                            <div class="">
-                                <div class="flex mt-9 mb-36 mr-9">
-                                    <!-- User info -->
-                                    <img src="./images/Avatar.svg" alt="avatar">
-                                    <img class="self-start mt-10 mx-10" src="./images/Sun.svg" alt="sunny">
-                                    <div class="flex flex-col mt-10 text-white">
-                                        <p class="text-4xl mb-4">صباح الخير</p>
-                                        <p class="text-4xl mb-2">احمد الكثيري</p>
-                                        <p class="text-base mb-2">مطور برامج، أدارة التقنية والتحول الرقمي</p>
-                                        <p class="text-base">9103221</p>
-                                    </div>
+                   <!-- Search -->
+                   <div class="relative text-gray-600" onclick="navabrClose()">
+                       <input type="search" name="serch" placeholder="البحث"
+                           class="bg-search h-14 px-5 pr-12 rounded-md xl:w-428 lg:w-240 text-sm focus:outline-none z-0">
+                       <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                           <img class="h-4 w-4 fill-current" src="./images/search.svg" alt="search">
+                       </button>
+                   </div>
+                   <!-- Date & weather -->
+                   <div class="hidden lg:flex pt-1" style="gap: 40px" onclick="navabrClose()">
+                       <div class="flex flex-col mx-6">
+                           <span id="currentTime" class="time"></span>
+                           <span class="time_slot">ص</span>
+                       </div>
+                       <div class="flex-col align-baseline xl:ml-6 time">
+                           <p id="currentDate" class="text-cyan-text"></span>
+                           <p class="date">12 ديسمبر 2022</p>
+                           <span class="date">17 شوال 1443</span>
+                       </div>
+                       <div class="flex">
+                           <img src="./images/cloudy_.svg" alt="cloudy">
+                           <div class="weather_block">
+                               <span class="flex">
+                                   <span class="celDegree">°C</span>
+                                   <span class="weatherNumber">16 / 25</span>
+                               </span>
+                               <span class="weather"> غائم</span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+    
+               <!-- profile drop down & Notifications -->
+               <div class="flex flex-row-reverse" onclick="navabrClose()">
+                   <button class="flex flex-row place-items-center pr-4" type="button"
+                       data-dropdown-toggle="dropdown">
+                       <svg class="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                               d="M19 9l-7 7-7-7"></path>
+                       </svg>
+                       <img src="./images/profileDropDown.svg" alt="profile">
+                   </button>
+                   <span class="w-0 h-6 place-self-center border"></span>
+                   <button class="flex flex-row place-items-center pl-4" type="button"
+                       data-dropdown-toggle="dropdown">
+                       <img src="./images/notifications.svg" alt="notifications">
+                   </button>
+                   <span class="notification text-white relative rounded-full">8</span>
+               </div>
+           </div>
+       </header>
+       <!-- Content -->
+    
+        <!-- section 1 -->
+        <section class="flex flex-col xl:flex-row xl:mb-9 xl:ml-14 lg:ml-0 aos-init aos-animate"  onclick="navabrClose()">
+            <!-- updates -->
+            <div class="flex xl:flex-col lg:flex-row w-full pr-0 lg:pr-90px xl:w-67% xxxl:w-66% xxxxl:w-67%">
+                <div class="updates bg-user-pattern h-85% xl:h-610 lg:h-580 w-full rounded-none lg:rounded-bl-lg">
+                    <!-- Full-width images with number and caption text -->
+                    <div>
+                        <div class="flex mt-9 mb-20 xl:mb-36 lg:mb-24 xl:mr-9 lg:mr-1 md:mr-1 xxxxl:mb-32">
+                            <!-- User info -->
+                            <img class="lg:w-1/4 md:w-1/4 xxl:w-1/5 xxxxl:w-15%" src="./images/Avatar.svg" alt="avatar">
+                            <img class="self-start mt-10 xl:mx-10 lg:mx-4 lg:w-10/10 md:w-10/10 xl:w-7% xxl:w-5%" src="./images/Sun.svg" alt="sunny">
+                            <div class="flex flex-col md:mt-6 lg:mt-10 text-white">
+                                <p class="text-4xl xxl:mb-2">صباح الخير</p>
+                                <p class="text-4xl  mb-2">احمد الكثيري</p>
+                                <p class="text-base mb-2">مطور برامج، أدارة التقنية والتحول الرقمي</p>
+                                <p class="text-base">9103221</p>
+                            </div>
+                        </div>
+                        <!-- Services sections -->
+                        <div class="flex flex-row justify-between place-items-center mb-8">
+                            <p class="text-2xl text-white font-medium xl:mr-9 lg:mr-4 md:mr-4">الخدمات</p>
+                            <div class="flex flex-row xl:ml-6 lg:ml-3 md:ml-3 items-center slick-controls">
+                                <!-- The dots/Next and previous buttons -->
+                                <button type="button"
+                                    class="w-9 h-6 ml-3 bg-white rounded-2xl shadow-sm border-0 previousItem"
+                                    style="text-align: -webkit-center;">
+                                   <img src="./images/right_slider_colored.svg" alt="left_slider_colored">
+                                </button>
+                                <div style="margin-top: -3px;">
+                                    <span class="dot1 ml-1"></span>
+                                    <span class="dot1"></span>
                                 </div>
-                                <!-- Services sections -->
-                                <div class="flex flex-row justify-between place-items-center w-11/12 mb-8">
-                                    <p class="text-2xl text-white font-medium mr-9">الخدمات</p>
-                                    <div class="flex flex-row relative right-4">
-                                        <!-- The dots/Next and previous buttons -->
-                                        <button type="button"
-                                            class="w-9 h-6 text-primary-text ml-3 bg-white rounded-2xl shadow-sm border-0"
-                                            onclick="plusSlides(-1)">
-                                            &#10094;
-                                        </button>
-                                        <div>
-                                            <span class="dot" onclick="currentSlide(1)"></span>
-                                            <span class="dot" onclick="currentSlide(2)"></span>
-                                            <span class="dot" onclick="currentSlide(3)"></span>
-                                        </div>
-                                        <button type="button"
-                                            class="w-9 h-6 text-primary-text mr-3 bg-white rounded-2xl shadow-sm border-0"
-                                            onclick="plusSlides(1)">
-                                            &#10095;
-                                        </button>
+                                <button type="button"
+                                    class="w-9 h-6 mr-3 bg-white rounded-2xl shadow-sm border-0 nextItem"
+                                    style="text-align: -webkit-center;">
+                                    <img src="./images/left_slider_colored.svg" alt="left_slider_colored">
+                                </button>
 
-                                    </div>
-                                </div>
-                                <!-- Services Cards -->
-                                <div class="flex flex-row md:flex-row gap-8 mr-9 ml-6 mb-7">
-                                    <a href="/"
-                                        class="flex h-32 flex-col bg-white justify-center items-center rounded-lg w-36 md:w-36 group hover:bg-primary-gradient">
-                                        <div
-                                            class="bg-support w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-support-hover">
+                            </div>
+                        </div>
+
+                        <div class="slideshow-container">
+                            <!-- Full-width images with number and caption text -->
+                             <!-- Services Cards -->
+                            <div class="socialSlides1 fade" dir="rtl">
+                                <div class="flex gap-4 xl:mr-6 lg:mr-5 ml-6 mb-10 md:mr-4 dd">
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
+                                        <div class="bg-support w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-support-hover">
                                         </div>
-                                        <div
-                                            class="text-primary-text text-xs text-center font-medium group-hover:text-white">
-                                            نظام الموارد البشرية </div>
+                                        <div class="text-primary-text text-xs text-center font-medium group-hover:text-white">نظام الموارد البشرية </div>
                                     </a>
-                                    <a href="/"
-                                        class="flex h-32 flex-col bg-white justify-center items-center rounded-lg w-36 md:w-36 group hover:bg-primary-gradient">
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
                                         <div
                                             class="bg-hr w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-hr-hover">
                                         </div>
@@ -167,8 +216,7 @@
                                             class="text-primary-text text-xs text-center font-medium group-hover:text-white">
                                             رحلة تطويري </div>
                                     </a>
-                                    <a href="/"
-                                        class="flex h-32 flex-col bg-white justify-center items-center rounded-lg w-36 md:w-36 group hover:bg-primary-gradient">
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
                                         <div
                                             class="bg-itSupport w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-itSupport-hover">
                                         </div>
@@ -176,8 +224,7 @@
                                             class="text-primary-text text-xs text-center font-medium group-hover:text-white">
                                             جيرا ( الدعم الفني) </div>
                                     </a>
-                                    <a href="/"
-                                        class="flex h-32 flex-col bg-white justify-center items-center rounded-lg w-36 md:w-36 group hover:bg-primary-gradient">
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
                                         <div
                                             class="bg-services w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-services-hover">
                                         </div>
@@ -185,8 +232,7 @@
                                             class="text-primary-text text-xs text-center font-medium group-hover:text-white">
                                             مراسلات </div>
                                     </a>
-                                    <a href="/"
-                                        class="flex h-32 flex-col bg-white justify-center items-center rounded-lg w-36 md:w-36 group hover:bg-primary-gradient">
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
                                         <div
                                             class="bg-crm w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-crm-hover">
                                         </div>
@@ -194,8 +240,7 @@
                                             class="text-primary-text text-xs text-center font-medium group-hover:text-white">
                                             CRM </div>
                                     </a>
-                                    <a href="/"
-                                        class="flex h-32 flex-col bg-white justify-center items-center rounded-lg w-36 md:w-36 group hover:bg-primary-gradient">
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
                                         <div
                                             class="bg-documents w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-documents-hover">
                                         </div>
@@ -203,14 +248,183 @@
                                             class="text-primary-text text-xs text-center font-medium group-hover:text-white">
                                             نماذج </div>
                                     </a>
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
+                                    <div
+                                        class="bg-adaa w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-documents-hover">
+                                    </div>
+                                    <div
+                                        class="text-primary-text text-xs text-center font-medium group-hover:text-white">
+                                        اداء </div>
+                                    </a>
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
+                                    <div
+                                        class="bg-join w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-join-hover">
+                                    </div>
+                                    <div
+                                        class="text-primary-text text-xs text-center font-medium group-hover:text-white">
+                                        شارك </div>
+                                    </a>
+                                    <a href="/" class=" bg-white rounded-lg w-full group hover:bg-primary-gradient py-7" style="text-align:-webkit-center">
+                                    <div
+                                        class="bg-visitor w-10 h-10 bg-no-repeat bg-contain mb-4 group-hover:bg-visitor-hover">
+                                    </div>
+                                    <div
+                                        class="text-primary-text text-xs text-center font-medium group-hover:text-white">
+                                        تسجيل زائر </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </div>
 
-                    <!-- Latest News -->
-                    <section class="mr-7 mb-9">
-                        <h2 class="text-2xl text-primary-text font-medium mt-12 mb-10">اخر الاخبار</h2>
+                <!-- Latest News -->
+                <div class="mr-7 hidden xl:flex xl:flex-col">
+                    <h2 class="text-2xl text-primary-text font-medium mt-12 mb-10 xl:mt-8 xxxl:mt-8 xl:mb-2 xxxl:mb-2">اخر الاخبار</h2>
+                    <!-- Slider -->
+                    <div class="flex flex-row w-full justify-between mt-4">
+                        <div>
+                            <button
+                                class="text-xs text-white bg-primary rounded-md items-center ml-2 py-2 px-3 w-fit">
+                                الكل
+                            </button>
+                            <button
+                                class="text-xs text-primary-text border border-gray-400 rounded-md items-center  ml-2  py-2 px-3 w-fit"
+                                style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                                الاخبار الداخلية
+                            </button>
+                            <button
+                                class="text-xs text-primary-text border border-gray-400 rounded-md items-center py-2 px-3 w-fit"
+                                style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                                الوسائط
+                            </button>
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <!-- The dots/Next and previous buttons -->
+                            <button type="button"
+                                class="w-9 h-6 ml-3 bg-primary rounded-2xl shadow-sm border-0"
+                                style="text-align: -webkit-center;"
+                                onclick="plusSlides(-1)">
+                                <img src="./images/right_slider.svg" alt="left">
+                            </button>
+                                <span class="dot ml-1" onclick="currentSlide(1)"></span>
+                                <span class="dot ml-1" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            <button type="button"
+                                class="w-9 h-6 mr-3 bg-primary rounded-2xl shadow-sm border-0"
+                                style="text-align: -webkit-center;"
+                                onclick="plusSlides(1)">
+                                <img src="./images/left_slider.svg" alt="left">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col xl:flex-col lg:flex-row mt-6 w-available xl:w-31% mr-20 sm:mr-0 lg:mr-28 xl:mr-9">
+                <!-- latest updates -->
+                <div class=" bg-white lg:mr-5 p-4 rounded-lg mb-4 xl:mb-6 lg:mb-0 md:mr-9 md:ml-7 lg:w-full lg:ml-0 xl:mr-0">
+                    <div class="flex flex-row w-full bg-linear py-2 px-6 mb-5 rounded-lg">
+                        <img src="./images/inquiry.svg" alt="">
+                        <p class="text-white text-xl font-medium self-center mr-6">اخر المستجدات</p>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex flex-row">
+                            <span
+                                class="text-xs text-white w-12 h-fit py-1 px-2 ml-3 mt-1 bg-status-red rounded-2xl">تعميم</span>
+                            <div class="flex-col font-normal text-primary-blue w-11/12">
+                                <p class="text-base sm:text-sm">عاجل لجميع لمقدمي خدمات الرعاية الصحية </p>
+                                <span class="text-primary-text" style="font-size: 8px;">23 ديسمير 2022</span>
+                            </div>
+                            <button class="w-15%">
+                                <span class="text-xll text-secondry-text font-medium">التفاصيل</span>
+                                <span class="text-xll" style="color: #40C1AC;">&#10095;</span>
+
+                            </button>
+                        </div>
+                        <hr class="my-3" style="opacity: 0.05;border: 0.5px solid #002554;" />
+
+                        <div class="flex flex-row">
+                            <span
+                                class="text-xs text-white w-12 h-fit py-1 px-2 ml-3 mt-1 bg-status-yellow rounded-2xl">اعلان</span>
+                            <div class="flex-col font-normal text-primary-blue w-11/12">
+                                <p class="text-base sm:text-sm"> اعلان داخلي - كبير اخصائيي إدارة التهديدات
+                                    السيبرانية</p>
+                                    <span class="text-primary-text" style="font-size: 8px;">23 ديسمير 2022</span>
+                                </div>
+                            <button class="w-15%">
+                                <span class="text-xll text-secondry-text font-medium">التفاصيل</span>
+                                <span class="text-xll" style="color: #40C1AC;">&#10095;</span>
+
+                            </button>
+                        </div>
+                        <hr class="my-3" style="opacity: 0.05;border: 0.5px solid #002554;" />
+
+                        <div class="flex flex-row">
+                            <span
+                                class="text-xs text-white w-12 h-fit py-1 px-2 ml-3 mt-1 bg-status-red rounded-2xl">تعميم</span>
+                            <div class="flex-col font-normal text-primary-blue w-11/12">
+                                <p class="text-base sm:text-sm"> تعلن إدارة الخدمات عن إيقاف وجبات الغداء </p>
+                                <span class="text-primary-text" style="font-size: 8px;">23 ديسمير 2022</span>
+                            </div>
+                            <button class="w-15%">
+                                <span class="text-xll text-secondry-text font-medium">التفاصيل</span>
+                                <span class="text-xll" style="color: #40C1AC;">&#10095;</span>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employees -->
+                <div class=" bg-white p-4 rounded-lg lg:w-full md:mr-9 md:ml-7 xl:mr-0">
+                    <div class="flex flex-row justify-between w-full xl:mt-4 lg:mt-0">
+                        <p class="text-primary-text xl:text-xl font-medium self-center xl:mr-6 xxxl:mr-0 xxxxl:mr-0"> دليل الموظفين</p>
+                        <button class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit">
+                            الذهاب لدليل الموظفين
+                            <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
+                        </button>
+                    </div>
+                    <div class="flex flex-row w-full mt-4 xl:mt-4 lg:mt-8">
+                        <button class="text-xs text-white bg-primary rounded-md items-center ml-2 py-2 px-3 w-fit">
+                            اسم الموظف
+                        </button>
+                        <button
+                            class="text-xs text-primary-text border border-gray-400 rounded-md items-center py-2 px-3 w-fit">
+                            التحويلة
+                        </button>
+                    </div>
+                    <div class="rounded-lg xl:pt-5 lg:pt-8 pb-3 xl:pb-4 lg:pb-8 px-7 mt-4 lg:mt-8 mb-2" style="background-color: #F4F6F9;">
+                        <p class="text-primary-text xl:text-lg font-medium xl:mb-4">اسم الموظف</p>
+                        <div class="relative text-gray-600 py-3">
+                            <input type="search" name="serch" placeholder="اسم الموظف"
+                                class="bg-white h-10 px-5 pr-12 rounded-lg text-sm w-full focus:outline-none">
+                            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                                <img class="fill-current" src="./images/searcyIcon.svg" alt="search">
+                            </button>
+                        </div>
+                        <div class="flex justify-end xl:mt-4 lg:mt-2">
+                            <button
+                                class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit">
+                                بحث
+                                <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 2 -->
+        <section class="flex flex-col xl:flex-row xl:ml-14 lg:ml-0 mr-24 sm:mr-0 lg:mr-28 xl:mr-5.5"  onclick="navabrClose()">
+            <!-- Latest News -->
+            <div class="mb-4 xl:mb-0 lg:mb-4 w-auto md:mr-7 md:ml-8 xl:w-80% xxl:w-80%">
+                <!-- Full-width images caption text -->
+                <div class="slideshow-container w-full">
+                     <!-- Latest News -->
+                    <div class="flex-col mb-4 xl:hidden">
+                        <h2 class="text-2xl text-primary-text font-medium mt-4 xl:mt-12 mb-10">اخر الاخبار</h2>
                         <!-- Slider -->
                         <div class="flex flex-row w-full justify-between mt-4">
                             <div>
@@ -229,256 +443,383 @@
                                     الوسائط
                                 </button>
                             </div>
-                            <div class="flex flex-row">
+                            <div class="flex flex-row items-center">
                                 <!-- The dots/Next and previous buttons -->
                                 <button type="button"
-                                    class="w-9 h-6 text-white ml-3 bg-primary rounded-2xl shadow-sm border-0"
+                                    class="w-9 h-6 ml-3 bg-primary rounded-2xl shadow-sm border-0 md:w-7 md:h-4"
+                                    style="text-align: -webkit-center;"
                                     onclick="plusSlides(-1)">
-                                    &#10094;
+                                    <img src="./images/right_slider.svg" alt="left">
                                 </button>
                                 <div>
-                                    <span class="dot" onclick="currentSlide(1)"></span>
-                                    <span class="dot" onclick="currentSlide(2)"></span>
+                                    <span class="dot ml-1" onclick="currentSlide(1)"></span>
+                                    <span class="dot ml-1" onclick="currentSlide(2)"></span>
                                     <span class="dot" onclick="currentSlide(3)"></span>
                                 </div>
                                 <button type="button"
-                                    class="w-9 h-6 text-white mr-3 bg-primary rounded-2xl shadow-sm border-0"
+                                    class="w-9 h-6 mr-3 bg-primary rounded-2xl shadow-sm border-0 md:w-7 md:h-4"
+                                    style="text-align: -webkit-center;"
                                     onclick="plusSlides(1)">
-                                    &#10095;
+                                    <img src="./images/left_slider.svg" alt="left">
                                 </button>
                             </div>
                         </div>
-                        <!-- Full-width images caption text -->
-                        <div class="slideshow-container mt-8 w-full">
-                            <div class="mySlides fade">
-                                <div class="bg-slider2 w-full h-80 bg-no-repeat bg-cover rounded-lg pt-28">
-                                    <div class="flex flex-col mr-7">
-                                        <div>
-                                            <span
-                                                class="text-xs text-white font-medium w-12 h-fit py-2 px-3 ml-3 bg-status-green rounded-2xl">اخر
-                                                الاخبار</span>
-                                            <span class="text-white text-xll">20 OCT 2022</span>
-                                        </div>
-                                        <div class="ml-16">
-                                            <p class="text-xl text-white my-3 font-medium">معالي وزير الصحة رئيس المجلس
-                                                المهندس فهد الجلاجل</p>
-                                            <p class="text-base text-white my-3 font-normal">سعدنا وتشرفنا بتدشين معالي
-                                                وزير الصحة رئيس المجلس المهندس فهد الجلاجل لجناح مجلس الضمان المشارك في
-                                                ملتقى الصحه العالمي.</p>
-                                        </div>
-                                    </div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="bg-slider2 w-full h-80 pt-28 xl:pt-36 lg:pt-32 bg-no-repeat bg-cover rounded-lg">
+                            <div class="flex flex-col mr-7">
+                                <div>
+                                    <span
+                                        class="text-xs text-white font-medium w-12 h-fit py-2 px-3 ml-3 bg-status-green rounded-2xl">اخر
+                                        الاخبار</span>
+                                    <span class="text-white text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                                </div>
+                                <div class="ml-4 xl:ml-20 lg:ml-9">
+                                    <p class="text-xl text-white my-3 font-medium">معالي وزير الصحة رئيس المجلس
+                                        المهندس فهد الجلاجل</p>
+                                    <p class="text-base text-white my-3 font-normal">سعدنا وتشرفنا بتدشين معالي
+                                        وزير الصحة رئيس المجلس المهندس فهد الجلاجل لجناح مجلس الضمان المشارك في
+                                        ملتقى الصحه العالمي.
+                                    </p>
+                                    <p class="flex justify-end place-self-center"> 
+                                        <span class="text-xs text-white font-medium">التفاصيل</span>
+                                        <img class="mr-2" src="./images/rightArrow.svg" alt="right">
+                                    </p>
                                 </div>
                             </div>
-
-                            <div class="mySlides fade">
-                                <div class="bg-slider1 w-full h-80 bg-no-repeat bg-cover rounded-lg pt-28">
-                                    <div class="flex flex-col mr-7">
-                                        <div>
-                                            <span
-                                                class="text-xs text-white font-medium w-12 h-fit py-2 px-3 ml-3 bg-status-green rounded-2xl">اخر
-                                                الاخبار</span>
-                                            <span class="text-white text-xll">20 OCT 2022</span>
-                                        </div>
-                                        <div class="ml-16">
-                                            <p class="text-xl text-white my-3 font-medium">الجلسات الحوارية في اليوم
-                                                الأول للمؤتمر الخليجي الخامس</p>
-                                            <p class="text-base text-white my-3 font-normal">جانب الجلسات الحوارية في
-                                                اليوم الأول للمؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية
-                                                لعام 2022م.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mySlides fade">
-                                <div class="bg-slider3 w-full h-80 bg-no-repeat bg-cover rounded-lg pt-28">
-                                </div>
-                            </div>
-
                         </div>
-                    </section>
+                    </div>
 
+                    <div class="mySlides fade">
+                        <div class="bg-slider1 w-full h-80 pt-28 xl:pt-36 lg:pt-32 bg-no-repeat bg-cover rounded-lg">
+                            <div class="flex flex-col mr-7">
+                                <div>
+                                    <span
+                                        class="text-xs text-white font-medium w-12 h-fit py-2 px-3 ml-3 bg-status-green rounded-2xl">اخر
+                                        الاخبار</span>
+                                    <span class="text-white text-xll">20 OCT 2022</span>
+                                </div>
+                                <div class="ml-4 xl:ml-20 lg:ml-9">
+                                    <p class="text-xl text-white my-3 font-medium">الجلسات الحوارية في اليوم
+                                        الأول للمؤتمر الخليجي الخامس</p>
+                                    <p class="text-base text-white my-3 font-normal">جانب الجلسات الحوارية في
+                                        اليوم الأول للمؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية
+                                        لعام 2022م.
+                                    </p>
+                                    <p class="flex justify-end place-self-center"> 
+                                        <span class="text-xs text-white font-medium">التفاصيل</span>
+                                        <img class="mr-2" src="./images/rightArrow.svg" alt="right">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="bg-slider3 w-full h-80 pt-28 xl:pt-36 lg:pt-32 bg-no-repeat bg-cover rounded-lg">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Insurance -->
+            <div class="flex flex-row lg:flex-row-reverse md:flex-row-reverse xl:w-42% xxl:flex-row">
+                <div class="bg-secondry-gradient xl:m-0 lg:mr-5 px-4 pb-4 xl:pb-8 lg:pb-6 rounded-xl h-full lg:w-full md:mr-0 md:ml-8 md:w-full">
+                    <div class="flex flex-row justify-between w-full xl:mt-2 lg:mt-0 mb-6 md:pt-4 lg:mb-4">
+                        <p class="xl:text-xl lg:text-xl text-white font-medium md:text-lg">مؤشرات التأمين</p>
+                    </div>
+                    <div
+                        class="tab flex bg-unactiveTab rounded-tl-lg rounded-tr-lg w-full font-normal text-sm text-primary-text">
+                        <button id="defaultOpen" class="py-3 w-full tablinks hover:rounded-tr-lg"
+                            onclick="openCity(event, 'saudi')">مؤمن له سعودي</button>
+                        <button id="nonSaudi" class="py-3 w-full tablinks hover:rounded-tl-lg"
+                            onclick="openCity(event, 'nonsaudi')">مؤمن له غير سعودي</button>
+                    </div>
+                    <div id="saudi" class="tabcontent xl:pr-6 pt-7 pb-7 md:pb-6">
+                        <div class="flex xl:flex-row md:flex-col">
+                            <img class="xl:pl-4 lg:pl-1 h-full md:h-16" src="./images/Citizen-Resident.svg" alt="saudi">
+                            <div class="w-full xl:text-right md:text-center">
+                                <h3 class="text-lg text-primary-text font-medium mb-4">المؤمن لهم السعوديين</h3>
+                                <div class="flex">
+                                    <div class="w-full">
+                                        <p class="text-status-green text-lg font-medium mb-1">1.616.184</p>
+                                        <p class="text-xs font-normal text-primary-text">مؤمن لهم سعوديين</p>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="text-status-green text-lg font-medium mb-1">5.694.091</p>
+                                        <p class="text-xs font-normal text-primary-text">معالين سعوديين</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div id="nonsaudi" class="tabcontent xl:pr-6 pt-7 pb-7 md:pb-6">
+                        <div class="flex xl:flex-row md:flex-col">
+                            <img class="xl:pl-4 lg:pl-1 h-full md:h-16" src="./images/nonSaudi.svg" alt="saudi">
+                            <div class="w-full xl:text-right md:text-center">
+                                <h3 class="text-lg text-primary-text font-medium mb-4">المؤمن لهم غير السعوديين</h3>
+                                <div class="flex">
+                                    <div class="w-full">
+                                        <p class="text-status-green text-lg font-medium mb-1">1.616.184</p>
+                                        <p class="text-xs font-normal text-primary-text">مؤمن لهم غير سعوديين</p>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="text-status-green text-lg font-medium mb-1">5.694.091</p>
+                                        <p class="text-xs font-normal text-primary-text">معالين غير سعوديين</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col xl:hidden lg:flex-row xl:flex-row gap-7 lg:mr-8 lg:w-full lg:mt-0 lg:ml-4 md:mt-0 md:ml-8 md:mr-8 md:w-full">
+                    <!-- Social Events -->
+                    <div class="bg-white p-5 lg:mb-4 rounded-lg w-full h-fit lg:pb-1.2rem">
+                        <div class="flex flex-row justify-between w-full">
+                            <p class="text-primary-text text-xl font-medium self-center mr-2 mb-3">المناسبات
+                                الاجتماعية
+                            </p>
+                            <!-- Slider -->
+                            <div class="flex md:hidden">
+                                <div class="flex flex-row items-center">
+                                    <!-- The dots/Next and previous buttons -->
+                                    <button type="button"
+                                        class="w-9 h-6 ml-3 bg-primary rounded-2xl shadow-sm border-0 md:w-7 md:h-4"
+                                        style="text-align: -webkit-center;"
+                                        onclick="plusSlides(-1)">
+                                        <img src="./images/right_slider.svg" alt="left">
+                                    </button>
+                                    <div>
+                                        <span class="dot ml-1" onclick="currentSlide(1)"></span>
+                                        <span class="dot ml-1" onclick="currentSlide(2)"></span>
+                                        <span class="dot" onclick="currentSlide(3)"></span>
+                                    </div>
+                                    <button type="button"
+                                        class="w-9 h-6 mr-3 bg-primary rounded-2xl shadow-sm border-0 md:w-7 md:h-4"
+                                        style="text-align: -webkit-center;"
+                                        onclick="plusSlides(1)">
+                                        <img src="./images/left_slider.svg" alt="left">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideshow-container">
+
+                            <!-- Full-width images with number and caption text -->
+                            <div class="socialSlides fade">
+                                <img class="w-full imgContainner" src="./images/baby.svg" alt="baby">
+                                <div class="flex justify-between">
+                                    <p class="text-sm font-medium text-primary-text">تهنئة | الزميل مشعل المحارب</p>
+                                    <p class="text-xll font-medium text-primary-text self-center">23 ديسمير 2021</p>
+                                </div>
+                            </div>
+
+                            <div class="socialSlides fade">
+                                <img class="w-full imgContainner" src="./images/baby.svg" alt="baby">
+                                <div class="flex justify-between">
+                                    <p class="text-sm font-medium text-primary-text">تهنئة | الزميل مشعل المحارب</p>
+                                    <p class="text-xll font-medium text-primary-text self-center">23 ديسمير 2021</p>
+                                </div>
+                            </div>
+
+                            <div class="socialSlides fade">
+                                <img class="w-full imgContainner" src="./images/baby.svg" alt="baby">
+                                <div class="flex justify-between">
+                                    <p class="text-sm font-medium text-primary-text">تهنئة | الزميل مشعل المحارب</p>
+                                    <p class="text-xll font-medium text-primary-text self-center">23 ديسمير 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 3 -->
+        <section class="flex flex-col xl:flex-row xl:ml-14 lg:ml-0 xl:mr-7/2 lg:mr-32"  onclick="navabrClose()">
+            <div class="flex flex-col w-full xxl:w-106%">
+                <div class="flex gap-7">
                     <!-- Events Section -->
-                    <div class="flex flex-row gap-7">
+                    <div class="hidden flex-col xl:flex lg:flex-row md:mr-32 md:mt-4 md:ml-8 lg:mr-8 xl:w-full xl:ml-0 xl:mt-8 xl:mr-0">
                         <!-- Social Events -->
-                        <section class="bg-white mr-8 px-5 pt-5 pb-4 rounded-lg w-full h-fit"
-                            style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
-                            <div class="flex flex-row justify-between w-full">
-                                <p class="text-primary-text text-xl font-medium self-center mr-2 mb-3">المناسبات
+                        <div class="bg-white p-5 lg:mb-4 rounded-lg w-full h-fit xl:mb-0 xl:p-0">
+                            <div class="flex flex-row justify-between w-full xl:mt-5">
+                                <p class="text-primary-text text-xl xl:text-xl font-medium self-center mr-2 mb-3 md:text-base xl:mr-5">المناسبات
                                     الاجتماعية
                                 </p>
                                 <!-- Slider -->
                                 <div class="flex">
-                                    <div class="flex flex-row">
+                                    <div class="flex flex-row xl:ml-6 items-center">
                                         <!-- The dots/Next and previous buttons -->
                                         <button type="button"
-                                            class="w-9 h-6 text-white ml-3 bg-primary rounded-2xl shadow-sm border-0"
-                                            onclick="plusSlides(-1)">
-                                            &#10094;
+                                            class="w-9 h-6 ml-3 bg-primary rounded-2xl shadow-sm border-0"
+                                            style="text-align: -webkit-center;"
+                                            onclick="plusSlides2(-1)">
+                                            <img src="./images/right_slider.svg" alt="left">
                                         </button>
-                                        <div>
-                                            <span class="dot" onclick="currentSlide(1)"></span>
-                                            <span class="dot" onclick="currentSlide(2)"></span>
-                                            <span class="dot" onclick="currentSlide(3)"></span>
-                                        </div>
+                                            <span class="dot2 ml-1" onclick="currentSlide2(1)"></span>
+                                            <span class="dot2 ml-1" onclick="currentSlide2(2)"></span>
+                                            <span class="dot2 ml-0" onclick="currentSlide2(3)"></span>
                                         <button type="button"
-                                            class="w-9 h-6 text-white mr-3 bg-primary rounded-2xl shadow-sm border-0"
-                                            onclick="plusSlides(1)">
-                                            &#10095;
+                                            class="w-9 h-6 mr-3 bg-primary rounded-2xl shadow-sm border-0"
+                                            style="text-align: -webkit-center;"
+                                            onclick="plusSlides2(1)">
+                                            <img src="./images/left_slider.svg" alt="left">
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="slideshow-container">
-
+                            <div class="slideshow-container p-4 xl:py-3 xl:px-4">
                                 <!-- Full-width images with number and caption text -->
-                                <div class="socialSlides fade">
+                                <div class="socialSlides2 fade">
                                     <img class="w-full imgContainner" src="./images/baby.svg" alt="baby">
                                     <div class="flex justify-between">
-                                        <p class="text-sm font-medium text-primary-text">تهنئة | الزميل مشعل المحارب</p>
+                                        <p class="text-sm font-medium text-primary-blue">تهنئة | الزميل مشعل المحارب</p>
                                         <p class="text-xll font-medium text-primary-text self-center">23 ديسمير 2021</p>
                                     </div>
                                 </div>
-
-                                <div class="socialSlides fade">
+    
+                                <div class="socialSlides2 fade">
                                     <img class="w-full imgContainner" src="./images/baby.svg" alt="baby">
                                     <div class="flex justify-between">
-                                        <p class="text-sm font-medium text-primary-text">تهنئة | الزميل مشعل المحارب</p>
+                                        <p class="text-sm font-medium text-primary-blue">تهنئة | الزميل مشعل المحارب</p>
                                         <p class="text-xll font-medium text-primary-text self-center">23 ديسمير 2021</p>
                                     </div>
                                 </div>
-
-                                <div class="socialSlides fade">
+    
+                                <div class="socialSlides2 fade">
                                     <img class="w-full imgContainner" src="./images/baby.svg" alt="baby">
                                     <div class="flex justify-between">
-                                        <p class="text-sm font-medium text-primary-text">تهنئة | الزميل مشعل المحارب</p>
+                                        <p class="text-sm font-medium text-primary-blue">تهنئة | الزميل مشعل المحارب</p>
                                         <p class="text-xll font-medium text-primary-text self-center">23 ديسمير 2021</p>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-
-                        <!-- Upcoming Events -->
-                        <section class="bg-white p-4 rounded-lg w-full h-fit"
-                            style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
-                            <div class="flex flex-row justify-between w-full mt-2">
-                                <p class="text-primary-text text-xl font-medium self-center mr-5">الفعاليات القادمة</p>
-                                <button
-                                    class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit">
-                                    عرض كل الفعاليات
-                                    <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
-                                </button>
+                        </div>
+                    </div>
+    
+                     <!-- Upcoming Events -->
+                    <div class="bg-white p-4 rounded-lg h-auto sm:mr-8 md:mt-4 md:ml-8 xl:h-fit lg:mr-4 xl:mr-0 xxl:mr-0 xxxl:mr-0 lg:mt-0 xl:w-full md:w-full xl:mt-8 xl:p-0 xl:ml-4 xl:pb-10">
+                        <div class="flex flex-row justify-between w-full mt-2 xl:mt-5">
+                            <p class="text-primary-text text-xl font-medium self-center mr-5 xl:mr-5">الفعاليات القادمة</p>
+                            <button
+                                class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit xl:ml-5">
+                                عرض كل الفعاليات
+                                <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
+                            </button>
+                        </div>
+                        <div class="flex flex-col mr-5 mt-7 pl-5">
+                            <div class="flex flex-row mb-5">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-medium text-status-green ml-3">25</span>
+                                    <span class="text-xll font-normal text-status-gray">سبتمبر</span>
+                                </div>
+                                <div class="flex-col font-normal text-primary-blue w-11/12">
+                                    <p class="text-base font-medium mb-1">احتفال اليوم الوطني</p>
+                                    <div class="flex">
+                                        <img src="./images/Time.svg" alt="time">
+                                        <span class="text-xll text-status-gray mr-1"> PM 2:00 - PM 12:00 </span>
+                                    </div>
+    
+                                </div>
                             </div>
-                            <div class="flex flex-col mr-5 mt-10">
-                                <div class="flex flex-row mb-5">
-                                    <div class="flex flex-col">
-                                        <span class="text-xl font-medium text-status-green ml-3">25</span>
-                                        <span class="text-xll font-normal text-status-gray">سبتمبر</span>
-                                    </div>
-                                    <div class="flex-col font-normal text-primary-blue w-11/12">
-                                        <p class="text-base font-medium mb-1">احتفال اليوم الوطني</p>
-                                        <div class="flex">
-                                            <img src="./images/Time.svg" alt="time">
-                                            <span class="text-xll text-status-gray mr-1"> 12:00 PM - 2:00 PM</span>
-                                        </div>
-
-                                    </div>
+                            <hr style="opacity: 0.05;border: 0.5px solid #002554;" />
+    
+                            <div class="flex flex-row mb-5 mt-5">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-medium text-status-green ml-3">29</span>
+                                    <span class="text-xll font-normal text-status-gray">اكتوبر</span>
                                 </div>
-                                <hr style="opacity: 0.1;border: 0.5px solid #002554;" />
-
-                                <div class="flex flex-row mb-5 mt-5">
-                                    <div class="flex flex-col">
-                                        <span class="text-xl font-medium text-status-green ml-3">29</span>
-                                        <span class="text-xll font-normal text-status-gray">اكتوبر</span>
-                                    </div>
-                                    <div class="flex-col font-normal text-primary-blue w-11/12">
-                                        <p class="text-base font-medium mb-1">يوم السعادة العالمي</p>
-                                        <div class="flex">
-                                            <img src="./images/Time.svg" alt="time">
-                                            <span class="text-xll text-status-gray mr-1"> 12:00 PM - 2:00 PM</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr style="opacity: 0.1;border: 0.5px solid #002554;" />
-                                <div class="flex flex-row mt-5">
-                                    <div class="flex flex-col">
-                                        <span class="text-xl font-medium text-status-green ml-3">15</span>
-                                        <span class="text-xll font-normal text-status-gray">ديسمبر</span>
-                                    </div>
-                                    <div class="flex-col font-normal text-primary-blue w-11/12">
-                                        <p class="text-base font-medium mb-1">سرطان الثدي</p>
-                                        <div class="flex">
-                                            <img src="./images/Time.svg" alt="time">
-                                            <span class="text-xll text-status-gray mr-1"> 12:00 PM - 2:00 PM</span>
-                                        </div>
+                                <div class="flex-col font-normal text-primary-blue w-11/12">
+                                    <p class="text-base font-medium mb-1">يوم السعادة العالمي</p>
+                                    <div class="flex">
+                                        <img src="./images/Time.svg" alt="time">
+                                        <span class="text-xll text-status-gray mr-1"> PM 2:00 - PM 12:00 </span>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                            <hr style="opacity: 0.05;border: 0.5px solid #002554;" />
+                            <div class="flex flex-row mt-5">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-medium text-status-green ml-3">15</span>
+                                    <span class="text-xll font-normal text-status-gray">ديسمبر</span>
+                                </div>
+                                <div class="flex-col font-normal text-primary-blue w-11/12">
+                                    <p class="text-base font-medium mb-1">سرطان الثدي</p>
+                                    <div class="flex">
+                                        <img src="./images/Time.svg" alt="time">
+                                        <span class="text-xll text-status-gray mr-1"> PM 2:00 - PM 12:00 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Library & New Employees Section -->
+                <div class="lg:flex md:flex flex-col lg:flex-row gap-7 mt-9 xl:mt-8 md:mt-4 md:ml-8 sm:mr-8 lg:mr-4 xl:mx-0 xl:ml-4">
+                    <!-- E-Library -->
+                    <div class="bg-white p-5 md:p-4 rounded-lg xl:w-full lg:w-full xl:p-0 xl:m-0">
+                        <div class="flex flex-row justify-between w-full mt-2 xl:mt-5">
+                            <p class="text-primary-text text-xl font-medium self-center mr-5 xl:mr-5">المكتبة الرقمية</p>
+                            <button
+                                class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit xl:ml-8">
+                                المكتبة الرقمية
+                                <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
+                            </button>
+                        </div>
+                        <div class="flex flex-col mt-8 lg:mt-12 xl:mt-14 px-10 lg:px-6">
+                            <div class="flex flex-row justify-between">
+                                <div class="flex mb-5 items-center">
+                                    <img class="ml-3" src="./images/Folder.svg" alt="folder">
+                                    <div class="font-normal text-primary-blue w-11/12">
+                                        <p class="text-base font-normal">النماذج</p>
+                                    </div>
+                                </div>
+                                <div class="place-self-center">
+                                    <img src="./images/nextArrow.svg" alt="arrow">
+                                </div>
+                            </div>
+                            <hr style="opacity: 0.05;border: 0.5px solid #002554;" />
+
+                            <div class="flex flex-row justify-between">
+                                <div class="flex mt-8 mb-5 items-center">
+                                    <img class="ml-3" src="./images/Folder.svg" alt="folder">
+                                    <div class="font-normal text-primary-blue w-11/12">
+                                        <p class="text-base font-normal">التعاميم و القرارات</p>
+                                    </div>
+                                </div>
+                                <div class="place-self-center">
+                                    <img src="./images/nextArrow.svg" alt="arrow">
+                                </div>
+                            </div>
+                            <hr style="opacity: 0.05;border: 0.5px solid #002554;" />
+                            <div class="flex flex-row justify-between">
+                                <div class="flex mt-8 items-center">
+                                    <img class="ml-3" src="./images/Folder.svg" alt="folder">
+                                    <div class="font-normal text-primary-blue w-11/12">
+                                        <p class="text-base font-normal">الاجراءات والسياسات</p>
+                                    </div>
+                                </div>
+                                <div class="place-self-center">
+                                    <img src="./images/nextArrow.svg" alt="arrow">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- E-Library & New Employees Section -->
-                    <div class="flex flex-row gap-7 mt-9">
-                        <!-- E-Library -->
-                        <section class="bg-white mr-8 p-5 rounded-lg w-full"
-                            style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
-                            <div class="flex flex-row justify-between w-full mt-2">
-                                <p class="text-primary-text text-xl font-medium self-center mr-5">المكتبة الرقمية</p>
-                                <button
-                                    class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit">
-                                    المكتبة الرقمية
-                                    <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
-                                </button>
-                            </div>
-                            <div class="flex flex-col mt-16 px-10">
-                                <div class="flex flex-row justify-between">
-                                    <div class="flex mb-5 items-center">
-                                        <img class="ml-3" src="./images/Folder.svg" alt="folder">
-                                        <div class="font-normal text-primary-blue w-11/12">
-                                            <p class="text-base font-normal">النماذج</p>
-                                        </div>
-                                    </div>
-                                    <div class="place-self-center">
-                                        <img src="./images/nextArrow.svg" alt="arrow">
-                                    </div>
-                                </div>
-                                <hr style="opacity: 0.1;border: 0.5px solid #002554;" />
-
-                                <div class="flex flex-row justify-between">
-                                    <div class="flex mt-8 mb-5 items-center">
-                                        <img class="ml-3" src="./images/Folder.svg" alt="folder">
-                                        <div class="font-normal text-primary-blue w-11/12">
-                                            <p class="text-base font-normal">التعاميم و القرارات</p>
-                                        </div>
-                                    </div>
-                                    <div class="place-self-center">
-                                        <img src="./images/nextArrow.svg" alt="arrow">
-                                    </div>
-                                </div>
-                                <hr style="opacity: 0.1;border: 0.5px solid #002554;" />
-                                <div class="flex flex-row justify-between">
-                                    <div class="flex mt-8 items-center">
-                                        <img class="ml-3" src="./images/Folder.svg" alt="folder">
-                                        <div class="font-normal text-primary-blue w-11/12">
-                                            <p class="text-base font-normal">الاجراءات والسياسات</p>
-                                        </div>
-                                    </div>
-                                    <div class="place-self-center">
-                                        <img src="./images/nextArrow.svg" alt="arrow">
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- New Employees -->
-                        <section class="bg-white rounded-lg w-full h-fit"
-                            style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                    <!-- New Employees -->
+                    <div class="bg-white rounded-lg w-full h-fit xl:ml-0 xl:mr-0">
+                        <div class="bg-white">
                             <div
-                                class="flex flex-row w-full bg-primary-dark py-6 px-4 mb-4 rounded-tr-lg rounded-tl-lg">
+                                class="flex flex-row w-full bg-primary-dark py-6 lg:py-4 px-4 mb-4 rounded-tr-lg rounded-tl-lg">
                                 <img src="./images/celebration.svg" alt="">
                                 <p class="text-white text-xl font-medium self-center mr-6">الموظفين الجدد</p>
                             </div>
-                            <div class="flex flex-col mb-8 px-10">
+                            <div class="flex flex-col mb-8 px-10 lg:px-6">
                                 <div class="flex flex-row justify-between">
                                     <div class="flex mb-3">
                                         <img class="ml-3" src="./images/Mariam.svg" alt="folder">
@@ -493,8 +834,8 @@
                                         <span class="text-xll text-primary-blue font-normal">2/11/2022</span>
                                     </div>
                                 </div>
-                                <hr style="opacity: 0.1;border: 0.5px solid #002554;" />
-
+                                <hr style="opacity: 0.05;border: 0.5px solid #002554;" />
+    
                                 <div class="flex flex-row justify-between">
                                     <div class="flex mt-4 mb-3">
                                         <img class="ml-3" src="./images/Saed.svg" alt="folder">
@@ -509,8 +850,8 @@
                                         <span class="text-xll text-primary-blue font-normal">2/11/2022</span>
                                     </div>
                                 </div>
-                                <hr style="opacity: 0.1;border: 0.5px solid #002554;" />
-
+                                <hr style="opacity: 0.05;border: 0.5px solid #002554;" />
+    
                                 <div class="flex flex-row justify-between">
                                     <div class="flex mt-4">
                                         <img class="ml-3" src="./images/Ahmed.svg" alt="folder">
@@ -526,215 +867,67 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
-
-                </div>
-
-                <!-- left side sections -->
-                <div class="flex flex-col w-2/4">
-                    <!-- latest updates -->
-                    <section class=" bg-white mt-6 mr-9 ml-14 p-4 rounded-lg"
-                        style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
-                        <div class="flex flex-row w-full bg-linear py-2 px-6 mb-5 rounded-lg">
-                            <img src="./images/inquiry.svg" alt="">
-                            <p class="text-white text-xl font-medium self-center mr-6">اخر المستجدات</p>
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="flex flex-row">
-                                <span
-                                    class="text-xs text-white w-12 h-fit py-1 px-2 ml-3 mt-1 bg-status-red rounded-2xl">تعميم</span>
-                                <div class="flex-col font-normal text-primary-blue w-11/12">
-                                    <p class="text-base">عاجل لجميع لمقدمي خدمات الرعاية الصحية </p>
-                                    <span style="font-size: 8px;">23 ديسمير 2022</span>
-                                </div>
-                                <button class="w-10/10">
-                                    <span class="text-xll text-secondry-text font-medium">التفاصيل</span>
-                                    <span class="text-xll" style="color: #40C1AC;">&#10095;</span>
-
-                                </button>
-                            </div>
-                            <hr class="my-3" style="opacity: 0.1;border: 0.5px solid #002554;" />
-
-                            <div class="flex flex-row">
-                                <span
-                                    class="text-xs text-white w-12 h-fit py-1 px-2 ml-3 mt-1 bg-status-yellow rounded-2xl">اعلان</span>
-                                <div class="flex-col font-normal text-primary-blue w-11/12">
-                                    <p class="text-base"> اعلان داخلي - كبير اخصائيي إدارة التهديدات السيبرانية</p>
-                                    <span style="font-size: 8px;">23 ديسمير 2022</span>
-                                </div>
-                                <button class="w-10/10">
-                                    <span class="text-xll text-secondry-text font-medium">التفاصيل</span>
-                                    <span class="text-xll" style="color: #40C1AC;">&#10095;</span>
-
-                                </button>
-                            </div>
-                            <hr class="my-3" style="opacity: 0.1;border: 0.5px solid #002554;" />
-
-                            <div class="flex flex-row">
-                                <span
-                                    class="text-xs text-white w-12 h-fit py-1 px-2 ml-3 mt-1 bg-status-red rounded-2xl">تعميم</span>
-                                <div class="flex-col font-normal text-primary-blue w-11/12">
-                                    <p class="text-base"> تعلن إدارة الخدمات عن إيقاف وجبات الغداء </p>
-                                    <span style="font-size: 8px;">23 ديسمير 2022</span>
-                                </div>
-                                <button class="w-10/10">
-                                    <span class="text-xll text-secondry-text font-medium">التفاصيل</span>
-                                    <span class="text-xll" style="color: #40C1AC;">&#10095;</span>
-
-                                </button>
-                            </div>
-                            <div class="flex justify-end mt-8">
-                                <button
-                                    class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit">
-                                    الكل
-                                    <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
-                                </button>
-                            </div>
-
-                        </div>
-                    </section>
-
-                    <!-- Employees -->
-                    <section class=" bg-white mt-6 mr-9 ml-14 p-4 rounded-lg"
-                        style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
-                        <div class="flex flex-row justify-between w-full mt-7">
-                            <p class="text-primary-text text-xl font-medium self-center mr-6"> دليل الموظفين</p>
-                            <button class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit">
-                                الذهاب لدليل الموظفين
-                                <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
-                            </button>
-                        </div>
-                        <div class="flex flex-row w-full mt-4">
-                            <button class="text-xs text-white bg-primary rounded-md items-center ml-2 py-2 px-3 w-fit">
-                                اسم الموظف
-                            </button>
-                            <button
-                                class="text-xs text-primary-text border border-gray-400 rounded-md items-center py-2 px-3 w-fit"
-                                style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
-                                التحويلة
-                            </button>
-                        </div>
-                        <div class="rounded-lg pt-5 pb-3 px-7 mt-4 mb-2" style="background-color: #F4F6F9;">
-                            <p class="text-primary-text text-lg font-medium mb-4">اسم الموظف</p>
-                            <div class="relative text-gray-600 ">
-                                <input type="search" name="serch" placeholder="اسم الموظف"
-                                    class="bg-white h-10 px-5 pr-12 rounded-sm text-sm w-full focus:outline-none">
-                                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-                                    <img class="h-4 w-4 fill-current" src="./images/search.svg" alt="search">
-                                </button>
-                            </div>
-                            <div class="flex justify-end mt-4">
-                                <button
-                                    class="flex text-xs text-white bg-primary rounded-md items-center py-2 px-3 w-fit">
-                                    بحث
-                                    <img class="mr-2" src="./images/arrow-right.svg" alt="arrow">
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Insurance -->
-                    <section class=" bg-secondry-gradient mt-6 mr-9 ml-14 px-4 pb-12 rounded-xl"
-                        style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
-                        <div class="flex flex-row justify-between w-full mt-7 mb-6">
-                            <p class="text-xl text-white font-medium">مؤشرات التأمين</p>
-                        </div>
-                        <div
-                            class="tab flex bg-unactiveTab rounded-tl-lg rounded-tr-lg w-full font-normal text-sm text-primary-text">
-                            <button id="defaultOpen" class="py-3 w-full tablinks hover:bg-white hover:rounded-tr-lg"
-                                onclick="openCity(event, 'saudi')">مؤمن له سعودي</button>
-                            <button id="nonSaudi" class="py-3 w-full tablinks hover:bg-white hover:rounded-tl-lg"
-                                onclick="openCity(event, 'nonsaudi')">مؤمن له غير سعودي</button>
-                        </div>
-                        <div id="saudi" class="tabcontent pr-6 pt-7 pb-7">
-                            <div class="flex">
-                                <img class="pl-6" src="./images/saudi.svg" alt="saudi">
-                                <div class="w-full">
-                                    <h3 class="text-lg text-primary-text font-medium mb-4">المؤمن لهم السعوديين</h3>
-                                    <div class="flex">
-                                        <div class="w-full">
-                                            <p class="text-status-green text-lg font-medium mb-1">1.616.184</p>
-                                            <p class="text-xs font-normal text-primary-text">مؤمن لهم سعوديين</p>
-                                        </div>
-                                        <div class="w-full">
-                                            <p class="text-status-green text-lg font-medium mb-1">5.694.091</p>
-                                            <p class="text-xs font-normal text-primary-text">معالين سعوديين</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="nonsaudi" class="tabcontent pr-6 pt-7 pb-7">
-                            <div class="flex">
-                                <img class="pl-6" src="./images/nonSuadi.svg" alt="saudi">
-                                <div class="w-full">
-                                    <h3 class="text-lg text-primary-text font-medium mb-4">المؤمن لهم غير السعوديين</h3>
-                                    <div class="flex">
-                                        <div class="w-full">
-                                            <p class="text-status-green text-lg font-medium mb-1">1.616.184</p>
-                                            <p class="text-xs font-normal text-primary-text">مؤمن لهم غير سعوديين</p>
-                                        </div>
-                                        <div class="w-full">
-                                            <p class="text-status-green text-lg font-medium mb-1">5.694.091</p>
-                                            <p class="text-xs font-normal text-primary-text">معالين غير سعوديين</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Twitter Section -->
-                    <section class="bg-white h-24 mt-9 mr-9 ml-14 rounded-lg">
-                        <div class="flex mr-5 mt-7 mb-5">
-                            <img src="./images/TwitterLogo.svg" alt="twitter">
-                            <span class="text-lg text-primary-text font-medium mr-4">اخر التغريدات </span>
-                        </div>
-                        <a class="twitter-timeline" data-lang="ar"
-                            href="https://twitter.com/SaudiCHI?ref_src=twsrc%5Etfw" data-height="670"
-                            data-chrome="nofooter noborders noheader">Tweets by SaudiCHI</a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </section>
                 </div>
             </div>
 
-            <!-- Footer -->
-            <footer class="mt-20 py-8 pr-8 pl-8">
-                <div class="flex justify-between">
-                    <div>
-                        <span class="text-xs text-primary-text cursor-pointer">سياسة الخصوصية</span>
-                        <span class="w-0 h-6 place-self-center border mx-5"></span>
-                        <span class="text-xs text-primary-text cursor-pointer">الشروط والاحكام</span>
-                        <p class="mt-2">Copyright © 2021 جميع الحقوق محفوظة. مجلس الضمان الصحي </p>
-                    </div>
-                    <!-- Social Links -->
-                    <div class="flex gap-1">
-                        <span class="text-xs font-medium text-primary-text place-self-center">تابعنا</span>
-                        <a href="https://youtube.com/cchiksa" target="_blank">
-                            <img class="pt-3" src="./images/YT.svg" alt="yt">
-                        </a>
-                        <a href="https://linkedin.com/company/cchiksa" target="_blank">
-                            <img class="pt-3" src="./images/LinkedIn.svg" alt="li">
-                        </a>
-                        <a href="https://facebook.com/SaudiCHI" target="_blank">
-                            <img class="pt-3" src="./images/FB.svg" alt="fb">
-                        </a>
-                        <a href="https://twitter.com/Saudichi" target="_blank">
-                            <img class="pt-3" src="./images/Twitter.svg" alt="tw">
-                        </a>
+            <!-- Twitter Section -->
+            <div class="bg-white h-24 lg:mr-5 rounded-lg md:mt-4 md:mr-32 md:ml-8 hidden xl:block xl:mt-8 xl:ml-0 xl:w-52%"
+                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);">
+                <div class="flex mr-5 mt-7 mb-5">
+                    <img src="./images/TwitterLogo.svg" alt="twitter">
+                    <span class="text-lg text-primary-text font-medium mr-4">اخر التغريدات </span>
+                </div>
+                <div class="bg-white pb-3 rounded-lg">
+                <div class="rounded-lg" style="border: 2px solid #F4F6F9;
+                margin: 20px 25px 10px 25px !important;">
+                    <a class="twitter-timeline" data-lang="ar"
+                        href="https://twitter.com/SaudiCHI?ref_src=twsrc%5Etfw"
+                        data-chrome="noborders noheader" data-height="590">Tweets by SaudiCHI</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 py-8 pr-8 pl-8 mr-28 md:mt-28"  onclick="navabrClose()">
+            <div class="flex flex-col-reverse xl:flex-row justify-between md:text-center xl:text-right">
+                <div>
+                    <span class="text-xs text-primary-text cursor-pointer">سياسة الخصوصية</span>
+                    <span class="w-0 h-6 place-self-center border mx-5"></span>
+                    <span class="text-xs text-primary-text cursor-pointer">الشروط والاحكام</span>
+                    <p class="mt-2 md:mt-4">جميع الحقوق محفوظة.<span class="font-medium ml-1">مجلس الضمان الصحي</span>Copyright © 2021</p>
+                </div>
+                <!-- Social Links -->
+                <div class="flex gap-0.1 place-self-center md:mb-4">
+                    <div class="flex flex-col xl:flex-row">
+                        <span class="text-xs font-medium text-primary-text ml-2 place-self-center xl:mt-4">تابعنا</span>
+                        <div class="flex flex-row gap-3 lg:mt-3 md:mt-3">
+                            <a href="https://youtube.com/cchiksa" target="_blank">
+                                <img class="rounded-full" src="./images/Group 1000001779.svg" alt="yt" style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                            <a href="https://linkedin.com/company/cchiksa" target="_blank">
+                                <img class="rounded-full" src="./images/Group 1000001780.svg" alt="li" style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                            <a href="https://facebook.com/SaudiCHI" target="_blank">
+                                <img class="rounded-full" src="./images/Group 1000001778.svg" alt="fb" style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                            <a href="https://twitter.com/Saudichi" target="_blank">
+                                <img class="rounded-full" src="./images/Group 1000001777.svg" alt="tw" style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
+ 
     </div>
 
 
-
-
-
-
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
 </body>
 

@@ -1,237 +1,300 @@
 @tailwind base;
 @tailwind components;
-@import url('https://fonts.cdnfonts.com/css/neo-sans-arabic');
+@import url("https://fonts.cdnfonts.com/css/neo-sans-arabic");
 
-body{
-    height: 100vh;
-    font-family: 'Neo Sans Arabic', sans-serif;
+body {
+  height: 100vh;
+  font-family: "Neo Sans Arabic", sans-serif;
 }
 @tailwind utilities;
 
+.navbar {
+  align-items: center;
+  text-align: -webkit-center;
+  padding: 60px 22px 40px;
+  gap: 32px;
+  isolation: isolate;
 
-.navbar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 22px 40px;
-    gap: 32px;
-    isolation: isolate;
+  width: 90px;
+  height: 980px;
 
-    width: 90px;
-    height: 980px;
+  /* Colors/Primary/Navy Blue */
 
-    /* Colors/Primary/Navy Blue */
+  background: #002554;
+  /* Shadow / Soft */
 
-    background: #002554;
-    /* Shadow / Soft */
+  box-shadow: 8px 8px 20px rgba(201, 199, 199, 0.19);
+  border-radius: 0px 0px 0px 40px;
 
-    box-shadow: 8px 8px 20px rgba(201, 199, 199, 0.19);
-    border-radius: 0px 0px 0px 40px;
+  /* Inside auto layout */
 
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 1;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+.hideSmall {
+  display: none;
+}
+.centeralize {
+  place-items: center;
+}
+.hide {
+  display: none;
 }
 
-.header_position{
-    padding: 28px 30px 28px 58px;
+.header_position {
+  padding: 22px 30px 23px 58px;
 }
 
-.time{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    display: flex;
+.time {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
 
-    color: #40C1AC;
+  color: #40c1ac;
 }
-.time_slot{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
-    text-align: right;
+.time_slot {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: right;
 
-    color: #005EB8;
+  color: #005eb8;
 }
-.date{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-    display: flex;
-    align-items: center;
-    text-align: right;
+.date {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  text-align: right;
 
-    color: #002554;
+  color: #002554;
 }
-.weather_block{
-    margin-right: 8px;
+.weather_block {
+  margin-right: 8px;
 }
-.weather{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: right;
+.weather {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
 
-    color: #002554;
+  color: #002554;
 
-    width: 10rem !important;
+  width: 10rem !important;
 
-    position: relative;
-    bottom: 0px;
+  position: relative;
+  bottom: 0px;
 }
-.weatherNumber{
-    display: flex;
+.weatherNumber {
+  display: flex;
+  place-self: center;
 
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 14px;
-    text-align: right;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  text-align: right;
 
-    color: #002554;
+  color: #002554;
 
-    width: 10rem;
+  width: 10rem;
 }
-.weatherDegree{
-    width: 15px;
-    height: 15px;
-    margin-left: 4px;
+.celDegree {
+  font-size: 1rem;
+  margin-left: 4px;
+  font-weight: 500;
 }
-
-.notification{
-    width: 17px;
-    height: 17px;
-
-    background: #EF5457;
-
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 10px;
-
-    text-align: center;
-    text-transform: capitalize;
-
-    top: 5px;
-    right: 5px;
-    padding-top: 3px;
+.weatherDegree {
+  width: 15px;
+  height: 15px;
+  margin-left: 4px;
 }
 
-.updates{
-    height: -webkit-fill-available;
+.notification {
+  width: 17px;
+  height: 17px;
 
-    /* background-image: url("./images/updatesBAckground.svg"); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 0px 0px 0px 8px;
+  background: #ef5457;
+
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
+
+  text-align: center;
+  text-transform: capitalize;
+
+  top: 13px;
+  right: 5px;
+  padding-top: 3px;
 }
 
+.updates {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 /* Hide the images by default */
 .mySlides {
-    display: none;
-  }
-  
-  /* Next & previous buttons */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-  
-  /* Caption text */
-  .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    position: absolute;
-    width: 100%;
-    top: 8%;
-  }
-  
-  /* The dots/bullets/indicators */
-  .dot {
-    cursor: pointer;
-    height: 5px;
-    width: 5px;
-    margin: 0 2px;
-    background-color: #D3DAE1;
-    
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
+  display: none;
+}
 
-  .imgContainner{
-    border: 0.5px solid rgba(191, 201, 212, 0.5);
-    border-radius: 8px;
-    margin-bottom: 12px;
-    height: 222px
-  }
-  
-  .active, .dot:hover {
-    background-color: #40C1AC;
-  }
-  
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
 
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color:  #FFF;
-    }
-  
-  /* Create an active/current tablink class */
-  .tab button.activeTab {
-    background-color: #FFF !important;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    background-color: white;
-    border-radius: 0 0 8px 8px;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-  .bg-linear{
-    background: linear-gradient(60.09deg, #005EB8 27.42%, #002554 141.86%);
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  position: absolute;
+  width: 100%;
+  top: 8%;
+}
+
+/* The dots/bullets/indicators */
+.dot1 {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  background-color: #d3dae1;
+
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  background-color: #d3dae1;
+
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* The dots/bullets/indicators */
+.dot2 {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  background-color: #d3dae1;
+
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.imgContainner {
+  border: 0.5px solid rgba(191, 201, 212, 0.5);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  height: 222px;
+}
+
+.active,
+.dot:hover {
+  background-color: #40c1ac;
+}
+
+.active,
+.dot1:hover {
+  background-color: #40c1ac;
+}
+
+.active,
+.dot2:hover {
+  background-color: #40c1ac;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  /* background-color:  #FFF; */
+}
+
+/* Create an active/current tablink class */
+.tab button.activeTab {
+  background-color: #fff !important;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
   }
-  
-  .twitter-timeline {
-    height: 670px !important;
+  to {
+    opacity: 1;
+  }
+}
+
+.bg-linear {
+  background: linear-gradient(60.09deg, #005eb8 27.42%, #002554 141.86%);
+}
+
+.twitter-timeline {
+  height: 630px !important;
+  background-color: white !important;
+  padding: 20px 25px 10px 25px !important;
+  border-radius: 8px !important;
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 16px;
+}
+
+/* News */
+.dropDown{
+  background: url(../images/downArrow.svg) no-repeat right white;
+  -webkit-appearance: none;
+  background-position-x: 5%;
 }

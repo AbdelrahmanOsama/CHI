@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="This project for CHI internal use">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link href="https://fonts.cdnfonts.com/css/neo-sans-arabic" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+
+    <title>الأخبار</title>
+</head>
+
+<body class="overflow-x-hidden " dir="rtl">
+    <section class="bg-main overflow-hidden rtl:text-align ltr:text-align">
+        <!-- Navbar -->
+        <nav id="navbar" class="fixed navbar lg:flex flex-col overflow-y-auto overflow-x-hidden sm:hidden z-50 right-0"
+            aria-label="navbar" onclick="navabrOpen()">
+            <!-- Logo -->
+            <img src="../images/Logo.svg" alt="logo">
+            <!-- Menu Items -->
+
+            <div id="navLinks" class="flex flex-col pt-10 gap-6 centeralize">
+                <a class="cursor-pointer flex" href="home">
+                    <img src="../images/Home.svg" alt="home">
+                    <span class="text-white font-normal mr-3 hide">الصفحة الرئيسية</span>
+                </a>
+                <a class="cursor-pointer flex" href="network">
+                    <img src="../images/Network.svg" alt="netwrok">
+                    <span class="text-white font-normal mr-3 hide"> الادارات </span>
+                </a>
+                <a class="cursor-pointer flex" href="users">
+                    <img src="../images/Users.svg" alt="user">
+                    <span class="text-white font-normal mr-3 hide"> دليل الموظفين </span>
+                </a>
+                <a class="cursor-pointer flex" href="attention">
+                    <img src="../images/latestIcon.svg" alt="attntion">
+                    <span class="text-white font-normal mr-3 hide">اخر المستجدات </span>
+                </a>
+                <a class="cursor-pointer flex" href="gallery">
+                    <img src="../images/Attentions.svg" alt="gallery">
+                    <span class="text-white font-normal mr-3 hide">عن المجلس </span>
+                </a>
+                <a class="cursor-pointer flex" href="pages/News.html">
+                    <img src="../images/Pictures.svg" alt="archived">
+                    <span class="text-white font-normal mr-3 hide"> المركز الاعلامي</span>
+                </a>
+                <a class="cursor-pointer flex" href="archived">
+                    <img src="../images/libraryIcon.svg" alt="library">
+                    <span class="text-white font-normal mr-3 hide"> المكتبة الرقمية </span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Navbar Small screen -->
+        <nav id="navbarSmall"
+            class="fixed navbar flex flex-col overflow-y-auto overflow-x-hidden z-50 right-0 hideSmall"
+            aria-label="navbar">
+            <span class="text-white font-normal absolute top-8 right-8 cursor-pointer"
+                onclick="navabrClose('smallScreen')">X</span>
+            <!-- Logo -->
+            <img src="../images/Logo.svg" alt="logo">
+            <!-- Menu Items -->
+
+            <div id="navLinksSmall" class="flex flex-col pt-10 gap-6 centeralize w-full">
+                <a class="cursor-pointer flex" href="home">
+                    <img src="../images/Home.svg" alt="home">
+                    <span class="text-white font-normal mr-3 hide">الصفحة الرئيسية</span>
+                </a>
+                <a class="cursor-pointer flex" href="network">
+                    <img src="../images/Network.svg" alt="netwrok">
+                    <span class="text-white font-normal mr-3 hide"> الادارات </span>
+                </a>
+                <a class="cursor-pointer flex" href="users">
+                    <img src="../images/Users.svg" alt="user">
+                    <span class="text-white font-normal mr-3 hide"> دليل الموظفين </span>
+                </a>
+                <a class="cursor-pointer flex" href="attention">
+                    <img src="../images/latestIcon.svg" alt="attntion">
+                    <span class="text-white font-normal mr-3 hide">اخر المستجدات </span>
+                </a>
+                <a class="cursor-pointer flex" href="gallery">
+                    <img src="../images/Attentions.svg" alt="gallery">
+                    <span class="text-white font-normal mr-3 hide">عن المجلس </span>
+                </a>
+                <a class="cursor-pointer flex" href="archived">
+                    <img src="../images/Pictures.svg" alt="archived">
+                    <span class="text-white font-normal mr-3 hide"> المركز الاعلامي</span>
+                </a>
+                <a class="cursor-pointer flex" href="archived">
+                    <img src="../images/libraryIcon.svg" alt="library">
+                    <span class="text-white font-normal mr-3 hide"> المكتبة الرقمية </span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="w-full h-100 pr-0 lg:pr-90px bg-white">
+            <div class="flex justify-between header_position">
+                <div class="flex flex-row xl:gap-120px lg:gap-5">
+                    <div class="block lg:hidden p-4 space-y-2 ml-6 cursor-pointer" onclick="navabrOpen('small')">
+                        <span class="block w-7 h-0.5 bg-primary-dark animate-pulse"></span>
+                        <span class="block w-7 h-0.5 bg-primary-dark animate-pulse"></span>
+                        <span class="block w-7 h-0.5 bg-primary-dark animate-pulse"></span>
+                    </div>
+                    <!-- Search -->
+                    <div class="relative text-gray-600" onclick="navabrClose()">
+                        <input type="search" name="serch" placeholder="البحث"
+                            class="bg-search h-14 px-5 pr-12 rounded-md xl:w-428 lg:w-240 text-sm focus:outline-none z-0">
+                        <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                            <img class="h-4 w-4 fill-current" src="../images/search.svg" alt="search">
+                        </button>
+                    </div>
+                    <!-- Date & weather -->
+                    <div class="hidden lg:flex pt-1" style="gap: 40px" onclick="navabrClose()">
+                        <div class="flex flex-col mx-6">
+                            <span id="currentTime" class="time"></span>
+                            <span class="time_slot">ص</span>
+                        </div>
+                        <div class="flex-col align-baseline xl:ml-6 time">
+                            <p id="currentDate" class="text-cyan-text"></span>
+                            <p class="date">12 ديسمبر 2022</p>
+                            <span class="date">17 شوال 1443</span>
+                        </div>
+                        <div class="flex">
+                            <img src="../images/cloudy_.svg" alt="cloudy">
+                            <div class="weather_block">
+                                <span class="flex">
+                                    <span class="celDegree">°C</span>
+                                    <span class="weatherNumber">16 / 25</span>
+                                </span>
+                                <span class="weather"> غائم</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- profile drop down & Notifications -->
+                <div class="flex flex-row-reverse" onclick="navabrClose()">
+                    <button class="flex flex-row place-items-center pr-4" type="button" data-dropdown-toggle="dropdown">
+                        <svg class="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                        <img src="../images/profileDropDown.svg" alt="profile">
+                    </button>
+                    <span class="w-0 h-6 place-self-center border"></span>
+                    <button class="flex flex-row place-items-center pl-4" type="button" data-dropdown-toggle="dropdown">
+                        <img src="../images/notifications.svg" alt="notifications">
+                    </button>
+                    <span class="notification text-white relative rounded-full">8</span>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Content -->
+        <section class="xl:mb-9 xl:ml-14 lg:ml-0 lg:mr-[90px] pt-16 pr-8 pl-26">
+            <h2 class="text-primary-text text-3xl font-medium mb-16">الاخبار</h2>
+
+            <!-- Filter -->
+            <div class="flex gap-6 mb-6">
+                <div class="relative text-gray-600" onclick="navabrClose()">
+                    <input type="search" name="serch" placeholder="البحث"
+                        class="bg-white h-full px-5 pr-12 rounded-md xl:w-634 lg:w-240 text-sm focus:outline-none z-0"
+                        style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                    <button type="submit" class="absolute right-0 top-0 mt-6 mr-4">
+                        <img class="h-4 w-4 fill-current" src="../images/search.svg" alt="search">
+                    </button>
+                </div>
+                <select class="rounded-lg bg-white w-full py-5 pr-4 dropDown" name="تصنيف الخبر" id="ordering">
+                    <option class="text-primary-text text-sm font-normal" value="1">تصنيف الخبر</option>
+                </select>
+                <select class="rounded-lg bg-white w-full py-5 pr-4 dropDown" name="ترتيب حسب" id="sorting">
+                    <option class="text-primary-text text-sm font-normal" value="1">ترتيب حسب</option>
+                </select>
+            </div>
+            <hr class="my-3 mb-6" style="opacity: 0.05;border: 0.5px solid #002554;" />
+
+
+            <!-- Cards -->
+            <div class="grid overflow-hidden xl:grid-cols-5 lg:grid-cols-4 grid-rows-4 gap-5 w-full">
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full mt-6">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full mt-6">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full mt-6">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full mt-6">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+                <div class="box row-span-2 flex-col bg-white rounded-lg p-5 flex-wrap w-full mt-6">
+                    <img class="w-full" src="../images/news_1.svg" alt="1">
+                    <span class="text-primary-text text-xll" dir="ltr"> 20 <span>OCT</span> 2022  </span>
+                    <p class="text-base text-primary-text my-3 font-normal">المؤتمر الخليجي الخامس لتطوير كوادر الرعاية الصحية الرقمية</p>
+                    <p class="flex justify-end place-self-center"> 
+                        <span class="text-xs text-status-green font-medium">التفاصيل</span>
+                        <img class="mr-2" src="../images/rightArrow.svg" alt="right">
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Footer -->
+        <footer class="mt-20 py-8 pr-8 pl-8 mr-28 md:mt-28" onclick="navabrClose()">
+            <div class="flex flex-col-reverse xl:flex-row justify-between md:text-center xl:text-right">
+                <div>
+                    <span class="text-xs text-primary-text cursor-pointer">سياسة الخصوصية</span>
+                    <span class="w-0 h-6 place-self-center border mx-5"></span>
+                    <span class="text-xs text-primary-text cursor-pointer">الشروط والاحكام</span>
+                    <p class="mt-2 md:mt-4">جميع الحقوق محفوظة.<span class="font-medium ml-1">مجلس الضمان
+                            الصحي</span>Copyright © 2021</p>
+                </div>
+                <!-- Social Links -->
+                <div class="flex gap-0.1 place-self-center md:mb-4">
+                    <div class="flex flex-col xl:flex-row">
+                        <span class="text-xs font-medium text-primary-text ml-2 place-self-center xl:mt-4">تابعنا</span>
+                        <div class="flex flex-row gap-3 lg:mt-3 md:mt-3">
+                            <a href="https://youtube.com/cchiksa" target="_blank">
+                                <img class="rounded-full" src="../images/Group 1000001779.svg" alt="yt"
+                                    style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                            <a href="https://linkedin.com/company/cchiksa" target="_blank">
+                                <img class="rounded-full" src="../images/Group 1000001780.svg" alt="li"
+                                    style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                            <a href="https://facebook.com/SaudiCHI" target="_blank">
+                                <img class="rounded-full" src="../images/Group 1000001778.svg" alt="fb"
+                                    style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                            <a href="https://twitter.com/Saudichi" target="_blank">
+                                <img class="rounded-full" src="../images/Group 1000001777.svg" alt="tw"
+                                    style="box-shadow: 0px 7px 10px rgba(41, 38, 50, 0.03);">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        </div>
+
+</body>
+
+</html>
