@@ -573,6 +573,10 @@ body {
   margin-right: 1.25rem;
 }
 
+.mb-27px {
+  margin-bottom: 27px;
+}
+
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -721,8 +725,8 @@ body {
   margin-bottom: 4rem;
 }
 
-.mb-27px {
-  margin-bottom: 27px;
+.mb-7 {
+  margin-bottom: 1.75rem;
 }
 
 .block {
@@ -1453,7 +1457,17 @@ body {
   height: 0;
 }
 
+.hideSubmenuSmall{
+  height: 0;
+}
+
 #submneu {
+  transition: height .5s;
+  height: 0;
+  overflow: hidden;
+}
+
+#submneuSmall {
   transition: height .5s;
   height: 0;
   overflow: hidden;

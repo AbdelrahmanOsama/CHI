@@ -24,7 +24,7 @@
             <!-- Menu Items -->
 
             <div id="navLinks" class="flex flex-col pt-10 centeralize">
-                <a class="cursor-pointer flex text-white group hover:text-status-green mb-27px" href="home">
+                <a class="cursor-pointer flex text-white group hover:text-status-green mb-27px" href="/index.html">
                     <span class="bg-Home w-8 h-8 bg-no-repeat bg-contain group-hover:bg-Home-hover"></span>
                     <span class="font-normal mr-3 hide self-center  title">الصفحة الرئيسية</span>
                 </a>
@@ -71,34 +71,43 @@
             <img src="./images/Logo.svg" alt="logo">
             <!-- Menu Items -->
 
-            <div id="navLinksSmall" class="flex flex-col pt-10 gap-6 centeralize w-full">
-                <a class="cursor-pointer flex" href="home">
-                    <img src="./images/Home.svg" alt="home">
-                    <span class="text-white font-normal mr-3 hide">الصفحة الرئيسية</span>
+            <div id="navLinksSmall" class="flex flex-col pt-10 centeralize w-full">
+                <a class="cursor-pointer flex text-white group hover:text-status-green mb-7" href="/index.html">
+                    <span class="bg-Home w-8 h-8 bg-no-repeat bg-contain group-hover:bg-Home-hover"></span>
+                    <span class="font-normal mr-3 hide self-center  title">الصفحة الرئيسية</span>
                 </a>
-                <a class="cursor-pointer flex" href="network">
-                    <img src="./images/Network.svg" alt="netwrok">
-                    <span class="text-white font-normal mr-3 hide"> الادارات </span>
+                <a class="cursor-pointer flex text-white group hover:text-status-green mb-7" href="network">
+                    <span class="bg-Network w-8 h-8 bg-no-repeat bg-contain group-hover:bg-Network-hover "></span>
+                    <span class=" font-normal mr-3 hide  self-center title"> الادارات</span>
                 </a>
-                <a class="cursor-pointer flex" href="users">
-                    <img src="./images/Users.svg" alt="user">
-                    <span class="text-white font-normal mr-3 hide"> دليل الموظفين  </span>
+                <a class="cursor-pointer flex text-white group hover:text-status-green mb-7" href="users">
+                    <span class="bg-Users w-8 h-8 bg-no-repeat bg-contain group-hover:bg-Users-hover "></span>
+                    <span class="font-normal mr-3 hide self-center title"> دليل الموظفين</span>
                 </a>
-                <a class="cursor-pointer flex" href="attention">
-                    <img src="./images/NewsCEnter.svg" alt="attntion">
-                    <span class="text-white font-normal mr-3 hide">اخر المستجدات </span>
+                <a class="cursor-pointer flex text-white group hover:text-status-green mb-7" href="attention">
+                    <span class="bg-NewsCEnter w-8 h-8 bg-no-repeat bg-contain group-hover:bg-NewsCEnter-hover "></span>
+                    <span class="font-normal mr-3 hide self-center title">اخر المستجدات</span>
                 </a>
-                <a class="cursor-pointer flex" href="gallery">
-                    <img src="./images/Attentions.svg" alt="gallery">
-                    <span class="text-white font-normal mr-3 hide">عن المجلس  </span>
+                <a class="cursor-pointer flex text-white group hover:text-status-green mb-7" href="gallery">
+                    <span class="bg-Attentions w-8 h-8 bg-no-repeat bg-contain group-hover:bg-Attentions2-hover "></span>
+                    <span class=" font-normal mr-3 hide self-center title">عن المجلس</span>
                 </a>
-                <a class="cursor-pointer flex" href="archived">
-                    <img src="./images/Pictures.svg" alt="archived">
-                    <span class="text-white font-normal mr-3 hide"> المركز الاعلامي</span>
+                <a id="expandableSmall" class="cursor-pointer flex group text-white hover:text-status-green mb-7" onclick="expandMenuSmallScreen()">
+                    <span id="news_centerSmall" class="bg-Pictures w-8 h-8 bg-no-repeat bg-contain group-hover:bg-Pictures-hover "></span>
+                    <span class=" font-normal mr-3 hide self-center title"> المركز الاعلامي</span>
                 </a>
-                <a class="cursor-pointer flex" href="archived">
-                    <img src="./images/libraryIcon.svg" alt="library">
-                    <span class="text-white font-normal mr-3 hide"> المكتبة الرقمية  </span>
+                <div id="submneuSmall" class="flex hideSubmenuSmall">
+                    <span class="submenu-seperator"></span>
+                    <div class="flex flex-col mr-3 text-right">
+                        <a id="news" class="text-sm font-normal mb-3 text-white hover:text-status-green" href="pages/News.html">الاخبار </a>
+                        <a id="multi" class="text-sm font-normal mb-3 text-white hover:text-status-green" href="">الوسائط </a>
+                        <a id="events" class="text-sm font-normal mb-3 text-white hover:text-status-green" href="">الفعاليات  </a>
+                    </div>
+                </div>
+                
+                <a class="cursor-pointer flex text-white group hover:text-status-green" href="archived">
+                    <span class="bg-libraryIcon w-8 h-8 bg-no-repeat bg-contain group-hover:bg-libraryIcon-hover "></span>
+                    <span class="font-normal mr-3 hide self-center title">المكتبة الرقمية</span>
                 </a>
             </div>
         </nav>

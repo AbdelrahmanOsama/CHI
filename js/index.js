@@ -27,7 +27,7 @@ const navabrOpen = (screen) => {
   const navLinksSmall = document.getElementById("navLinksSmall");
 
   if (screen === "small") {
-    $("#navLinksSmall>a>span").removeClass("hide");
+    $(".title").removeClass("hide");
     navLinksSmall.classList.remove("centeralize");
     navSmall.classList.remove("hideSmall");
     navSmall.style.width = "30%";
@@ -39,38 +39,56 @@ const navabrOpen = (screen) => {
   }
 };
 
-const navabrClose = (screen) => {
-  const width = screen?.width;
-  const nav = document.getElementById("navbar");
-  const navSmall = document.getElementById("navbarSmall");
-  const navLinks = document.getElementById("navLinks");
-  const navLinksSmall = document.getElementById("navLinksSmall");
+const navabrClose = (screenType) => {
+  try {
+    const width = screen?.width;
+    const nav = document.getElementById("navbar");
+    const navSmall = document.getElementById("navbarSmall");
+    const navLinks = document.getElementById("navLinks");
+    const navLinksSmall = document.getElementById("navLinksSmall");
+  
+    const submenu = document.getElementById("submneu");
+    const toggle = document.getElementsByClassName("hideSubmenu");
+    const expandable = document.getElementById("expandable");
+    const news_center = document.getElementById("news_center");
+  
+    const submenuSmall = document.getElementById("submneuSmall");
+    const expandableSmall = document.getElementById("expandableSmall");
+    const news_centerSmall = document.getElementById("news_centerSmall");
+    const toggleSmall = document.getElementsByClassName("hideSubmenuSmall");
 
-  const submenu = document.getElementById("submneu");
-  const toggle = document.getElementsByClassName("hideSubmenu");
-  const expandable = document.getElementById("expandable");
-  const news_center = document.getElementById("news_center");
-
-  if (width <= 975 || screen === "smallScreen") {
-    $("#navLinksSmall>a>span").addClass("hide");
-    navLinksSmall.classList.add("centeralize");
-    navSmall.classList.add("hideSmall");
-  } else {
-    navLinks.classList.add("centeralize");
-    $(".title").addClass("hide");
-    nav.style = "90px";
+  
+    if (width <= 975 || screenType === "smallScreen") {
+      $(".title").addClass("hide");
+      navLinksSmall.classList.add("centeralize");
+      navSmall.classList.add("hideSmall");
+    } else {
+      navLinks.classList.add("centeralize");
+      $(".title").addClass("hide");
+      nav.style = "90px";
+    }
+  
+    if (toggle.length === 0 ) {
+      submenu.classList.add("hideSubmenu");
+      expandable.style.color = '#fff';
+      submenu.style.height = '0px';
+      news_center.style.backgroundImage = "url('./images/Pictures.svg')";
+    } 
+    console.log(toggleSmall.length === 0)
+    if (toggleSmall.length === 0 ) {
+      submenuSmall.classList.add("hideSubmenuSmall");
+      expandableSmall.style.color = '#fff';
+      submenuSmall.style.height = '0px';
+      news_centerSmall.style.backgroundImage = "url('./images/Pictures.svg')";
+    } 
+    
+  } catch (error) {
+      console.log(error)
   }
-
-  if (toggle.length === 0 ) {
-    submenu.classList.add("hideSubmenu");
-    expandable.style.color = '#fff';
-    submenu.style.height = '0px';
-    news_center.style.backgroundImage = "url('./images/Pictures.svg')";
-  } 
 };
 
 //Expand & Collapse menu
-const expandMenu = () => {
+const expandMenu = (screen) => {
   const submenu = document.getElementById("submneu");
   const expandable = document.getElementById("expandable");
   const news_center = document.getElementById("news_center");
@@ -83,6 +101,25 @@ const expandMenu = () => {
     news_center.style.backgroundImage = "url('./images/Pictures_hover.svg')";
   } else {
     submenu.classList.add("hideSubmenu");
+    expandable.style.color = '#fff';
+    submenu.style.height = '0px';
+    news_center.style.backgroundImage = "url('./images/Pictures.svg')";
+  }
+}
+
+const expandMenuSmallScreen = (screen) => {
+  const submenu = document.getElementById("submneuSmall");
+  const expandable = document.getElementById("expandableSmall");
+  const news_center = document.getElementById("news_centerSmall");
+  const toggle = document.getElementsByClassName("hideSubmenuSmall");
+
+  if (toggle.length > 0 ) {
+    submenu.classList.remove("hideSubmenuSmall");
+    submenu.style.height = '100px';
+    expandable.style.color = '#40C1AC';
+    news_center.style.backgroundImage = "url('./images/Pictures_hover.svg')";
+  } else {
+    submenu.classList.add("hideSubmenuSmall");
     expandable.style.color = '#fff';
     submenu.style.height = '0px';
     news_center.style.backgroundImage = "url('./images/Pictures.svg')";
