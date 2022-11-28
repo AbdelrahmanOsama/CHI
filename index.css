@@ -11,7 +11,7 @@ body {
 .navbar {
   align-items: center;
   text-align: -webkit-center;
-  padding: 60px 22px 40px;
+  padding: 38px 22px 40px;
   gap: 32px;
   isolation: isolate;
 
@@ -42,7 +42,28 @@ body {
 .hide {
   display: none;
 }
-
+.submenu-seperator{
+  border: 1px solid #D0D5DD;
+  transform: rotate(0deg);
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 4;
+  margin-right: 0.5rem;
+  height: 80%;
+}
+.hideSubmenu{
+  height: 0;
+}
+#submneu {
+  -moz-transition: height .5s;
+  -ms-transition: height .5s;
+  -o-transition: height .5s;
+  -webkit-transition: height .5s;
+  transition: height .5s;
+  height: 0;
+  overflow: hidden;
+}
 .header_position {
   padding: 22px 30px 23px 58px;
 }
@@ -291,6 +312,23 @@ body {
   display: flex !important;
   gap: 16px;
 }
+
+.slick-dots {
+    position: relative !important;
+    top: -2px;
+}
+.slick-dots li {
+    width: 15px !important;
+    margin: 0 !important;
+}
+.slick-dots li.slick-active button:before{
+  color: #40C1AC !important;
+    opacity: 1 !important;
+}
+.slick-dots li button:before {
+    color: #fff !important;
+    opacity: 1 !important;
+  }
 
 /* News */
 .dropDown{

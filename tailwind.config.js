@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [' ./*.html', './pages/*.html'],
+  content: ['./*.html', './pages/**/*.html'],
   theme: {
     screens: {
       sm: '480px',
@@ -25,6 +25,20 @@ module.exports = {
       backgroundImage: {
         'primary-gradient': 'linear-gradient(53.03deg, #005EB8 15.44%, #2093B3 52.5%, #40C1AC 82.35%)',
         'secondry-gradient': 'linear-gradient(71.42deg, #8FA0B4 -4.57%, #002554 106.92%)',
+        'Home': "url('../images/Home.svg')",
+        'Home-hover': "url('../images/Home_hover.svg')",
+        'Network': "url('../images/Network.svg')",
+        'Network-hover': "url('../images/Attentions_hover.svg')",
+        'Users': "url('../images/Users.svg')",
+        'Users-hover': "url('../images/Users_hover.svg')",
+        'NewsCEnter': "url('../images/NewsCEnter.svg')",
+        'NewsCEnter-hover': "url('../images/NewsCEnter_hover.svg')",
+        'Attentions': "url('../images/Attentions.svg')",
+        'Attentions2-hover': "url('../images/Attentions2_hover.svg')",
+        'Pictures': "url('../images/Pictures.svg')",
+        'Pictures-hover': "url('../images/Pictures_hover.svg')", 
+        'libraryIcon': "url('../images/libraryIcon.svg')",
+        'libraryIcon-hover': "url('../images/LibraryIcon_hover.svg')",
         'user-pattern': "url('../images/updatesBAckground.svg')",
         'support' : "url('../images/customerSupport.svg')",
         'support-hover' : "url('../images/customerSupport_Hover.svg')",
@@ -65,6 +79,7 @@ module.exports = {
       "7%": "7%",
       "12%": "12%",
       "15%": "15%",
+      "18%": "18%",
       "30%": "30%",
       "31%": "31%",
       "34%": "34%",
@@ -116,6 +131,7 @@ module.exports = {
     margin: {
       "min-2":"-2px", 
       "min-7":"-7px",
+      "27px": "27px",
       "5.5": "5.5rem",
       "7/2": "7.2rem"
     }
